@@ -1,4 +1,4 @@
-module cnn_first_layer#(
+module cnn_first_layer_top#(
 parameter imgDepth = 2,
 parameter depth = 6,
 parameter imgSize = 36,
@@ -35,11 +35,6 @@ S11 = 8,
 S2 = 2, // Wait 57 cycles for first-layer phase (done_i1/wr_en active)
 S3 = 3, // End first-layer phase (deassert done_i1/wr_en)
 S4 = 4, // Assert start2 pulse (one cycle)
-S41 = 9,
-S42 = 10,
-S43 = 11,
-S5 = 5, // Wait 57 cycles for second-layer phase (done_i2 and rd_en active)
-S6 = 6, // End second-layer phase (deassert done_i2 and rd_en)
 S_IDLE= 7; // Idle/finish state
 // Counter signals and reset control
 reg [31:0] counter;
